@@ -1,25 +1,25 @@
-import type { Component } from 'solid-js';
-
+import { createSignal, type Component } from 'solid-js';
 import logo from './logo.svg';
-import styles from './App.module.css';
+import styles from './App.module.scss';
 
 const App: Component = () => {
+
+  const [onGoing, setOnGoing] = createSignal(true);
+
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+    <div class={styles.app}>
+      <h1>Memory Game</h1>
+      {onGoing() ? 
+
+
+      <div class={styles.board}>
+      
+      </div> 
+      
+      
+      :
+      <button class={styles.start} onclick={() => setOnGoing(true)} >Start</button>
+      }
     </div>
   );
 };
